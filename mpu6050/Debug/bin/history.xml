@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=mpu6050.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\mpu6050 -TC:\CooCox\CoIDE\configuration\ProgramData\mpu6050/arm-gcc-link.ld -g">
+      <target file="mpu6050.elf" lastModified="14c9a9e65a4">
+         <source file="..\obj\stm32f30x_rcc.o" lastModified="14c982877b3"/>
+         <source file="..\obj\stm32f30x_gpio.o" lastModified="14c982877f1"/>
+         <source file="..\obj\main.o" lastModified="14c9a2584fb"/>
+         <source file="..\obj\stm32f30x_spi.o" lastModified="14c982878ad"/>
+         <source file="..\obj\stm32f30x_i2c.o" lastModified="14c9828790b"/>
+         <source file="..\obj\mpu6050.o" lastModified="14c9a9e4db1"/>
+         <source file="..\obj\system_stm32f30x_temp.o" lastModified="14c98287988"/>
+         <source file="..\obj\syscalls.o" lastModified="14c982879c6"/>
+         <source file="..\obj\stm32f30x_misc.o" lastModified="14c98287a05"/>
+         <source file="..\obj\stm32f30x_tim.o" lastModified="14c98287ac0"/>
+         <source file="..\obj\startup_stm32f30x.o" lastModified="14c98287adf"/>
+         <source file="..\obj\stm32f30x_usart.o" lastModified="14c98287b4d"/>
+      </target>
+   </processor>
+</history>
