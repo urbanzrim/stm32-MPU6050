@@ -96,6 +96,7 @@
 #define FIFO_R_W 			0x74
 #define WHO_AM_I			0x75
 
+
 /* Maximum values for timeout flags waiting loops. These timeouts are not "time" defined
  * and are used just that application doesn't get stuck if I2C communication is corrupted.
  */
@@ -114,36 +115,56 @@ typedef enum{
 
 }MPU6050_errorstatus;
 
+/* Gyroscope Full scale range options 	@gyro_scale_range */
 typedef enum{
 
 	MPU6050_GYRO_250 = 0x00,
-	MPU6050_GYRO_500 = 0x01,
+	MPU6050_GYRO_500 = 0x08,
 	MPU6050_GYRO_1000 = 0x10,
-	MPU6050_GYRO_2000 = 0x11
+	MPU6050_GYRO_2000 = 0x18
 
 }MPU6050_Gyro_Range;
 
+/* Accelerometer's full scale range options		@accel_scale_range */
 typedef enum{
 
 	MPU6050_ACCEL_2g = 0x00,
-	MPU6050_ACCEL_4g = 0x01,
+	MPU6050_ACCEL_4g = 0x08,
 	MPU6050_ACCEL_8g = 0x10,
-	MPU6050_ACCEL_16g = 0x11
+	MPU6050_ACCEL_16g = 0x18
 }MPU6050_Accel_Range;
+
+/* Power management 1 	@pwr_mngt_1 */
+typedef enum{
+
+	MPU6050_INTERNAL_OSC = 0x00,
+	MPU6050_PLL_X_GYRO = 0x01,
+	MPU6050_PLL_Y_GYRO = 0x02,
+	MPU6050_PLL_Z_GYRO = 0x03,
+	MPU6050_PLL_EXT_32KHZ = 0x04,
+	MPU6050_PLL_EXT_19MHZ = 0x05,
+	MPU6050_STOP_CLOCK = 0x07
+}MPU6050_Clock_Select;
 
 MPU6050_errorstatus MPU6050_Read(uint8_t SlaveAddr, uint8_t RegAddr, uint8_t* pBuffer, uint16_t NumByteToRead);
 MPU6050_errorstatus MPU6050_Write(uint8_t SlaveAddr, uint8_t RegAddr, uint8_t* pBuffer);
-void MPU6050_Test(void);
+MPU6050_errorstatus MPU6050_Test(void);
 
 /* Gyroscope Full scale range functions */
 uint8_t MPU6050_Gyro_Get_Range(void);
-void MPU6050_Gyro_Set_Range(uint8_t range);
+MPU6050_errorstatus MPU6050_Gyro_Set_Range(MPU6050_Gyro_Range range);
 
 /* Accelerometer Full scale range functions */
-uint8_t MPU6050_Accel_Get_Range(void);
-void MPU6050_Accel_Set_Range(uint8_t range);
+MPU6050_errorstatus MPU6050_Accel_Get_Range(void);
+MPU6050_errorstatus MPU6050_Accel_Set_Range(MPU6050_Accel_Range range);
 
-MPU6050_errorstatus MPU6050_Accel_Config();
-uint8_t MPU6050_GetDeviceID(void);
+MPU6050_errorstatus MPU6050_Accel_Config(void);
+MPU6050_errorstatus MPU6050_Set_Clock(MPU6050_Clock_Select clock);
 
+MPU6050_errorstatus MPU6050_Initialization(void);
+
+/* Data functions prototypes */
+uint16_t MPU6050_Get_Gyro_Data(void);
+MPU6050_errorstatus MPU6050_Get_Accel_Data(void);
+uint16_t MPU6050_Get_Temperature(void);
 

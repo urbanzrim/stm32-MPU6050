@@ -19,17 +19,20 @@
       <target file="stm32f30x_spi.o" lastModified="14c982878ad">
          <source file="..\..\..\cmsis_lib\source\stm32f30x_spi.c" lastModified="14c933b6ab9"/>
       </target>
+      <target file="printf.o" lastModified="14ca3bfd5fb">
+         <source file="..\..\..\stdio\printf.c" lastModified="14ca3bf6f08"/>
+      </target>
       <target file="stm32f30x_rcc.o" lastModified="14c982877b3">
          <source file="..\..\..\cmsis_lib\source\stm32f30x_rcc.c" lastModified="14c933b3302"/>
       </target>
       <target file="stm32f30x_gpio.o" lastModified="14c982877f1">
          <source file="..\..\..\cmsis_lib\source\stm32f30x_gpio.c" lastModified="14c933b398e"/>
       </target>
-      <target file="mpu6050.o" lastModified="14c9a9e4db1">
-         <source file="..\..\..\cmsis_lib\source\mpu6050.c" lastModified="14c9a9e4432"/>
+      <target file="mpu6050.o" lastModified="14ca4c4bb54">
+         <source file="..\..\..\cmsis_lib\source\mpu6050.c" lastModified="14ca4c497ba"/>
       </target>
-      <target file="main.o" lastModified="14c9a2584fb">
-         <source file="..\..\..\main.c" lastModified="14c9a12dce4"/>
+      <target file="main.o" lastModified="14ca4c4badd">
+         <source file="..\..\..\main.c" lastModified="14ca4c4b315"/>
       </target>
       <target file="stm32f30x_misc.o" lastModified="14c98287a05">
          <source file="..\..\..\cmsis_lib\source\stm32f30x_misc.c" lastModified="14c933b80f0"/>

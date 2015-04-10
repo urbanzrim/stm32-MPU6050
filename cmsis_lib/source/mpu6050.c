@@ -9,13 +9,42 @@
 
 uint32_t MPU6050_Timeout = MPU6050_FLAG_TIMEOUT;
 
-void MPU6050_Test(void){
 
-	uint8_t tmp = 0;
-	uint8_t buf[100];
+MPU6050_errorstatus MPU6050_Initialization(void){
 
-	tmp = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, WHO_AM_I, buf, 1);
-	if(buf[0] == (uint8_t)0x68) test = 1;
+	MPU6050_errorstatus errorstatus;
+
+	/* Set Clock source for the chip
+	 * possible values @pwr_mngt_1
+	 */
+	errorstatus = MPU6050_Set_Clock(MPU6050_PLL_X_GYRO);
+	if(errorstatus != 0) return errorstatus;
+
+	/* Set Gyroscope's full scope range
+	 * possible values @gyro_scale_range
+	 */
+	errorstatus = MPU6050_Gyro_Set_Range(MPU6050_GYRO_250);
+	if(errorstatus != 0) return errorstatus;
+
+	/* Set Accelerometer's full scope range
+	 * possible values @accel_scale_range
+	 */
+	errorstatus = MPU6050_Accel_Set_Range(MPU6050_ACCEL_2g);
+	if(errorstatus != 0) return errorstatus;
+
+	return MPU6050_NO_ERROR;
+}
+
+MPU6050_errorstatus MPU6050_Test(void){
+
+	MPU6050_errorstatus errorstatus;
+	uint8_t tmp;
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, WHO_AM_I, &tmp, 1);
+	if(tmp != (uint8_t)0x68){
+		return errorstatus;
+	}
+	return MPU6050_NO_ERROR;
 }
 
 MPU6050_errorstatus MPU6050_Read(uint8_t SlaveAddr, uint8_t RegAddr, uint8_t* pBuffer, uint16_t NumByteToRead)
@@ -141,6 +170,141 @@ MPU6050_errorstatus MPU6050_Write(uint8_t SlaveAddr, uint8_t RegAddr, uint8_t* p
 
 	return MPU6050_NO_ERROR;
 }
+
+uint8_t MPU6050_Gyro_Get_Range(void){
+
+	MPU6050_errorstatus errorstatus;
+	uint8_t tmp;
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_CONFIG, &tmp, 1);
+	if(errorstatus != 0){
+		return 1;
+	}
+	else return tmp;
+
+}
+
+MPU6050_errorstatus MPU6050_Gyro_Set_Range(MPU6050_Gyro_Range range){
+
+	MPU6050_errorstatus errorstatus;
+
+	errorstatus = MPU6050_Write((MPU6050_ADDRESS & 0x7f) << 1, GYRO_CONFIG, &range);
+	if(errorstatus != 0){
+		return errorstatus;
+	}
+	else return MPU6050_NO_ERROR;
+
+}
+
+uint8_t MPU6050_Accel_Get_Range(void){
+
+	MPU6050_errorstatus errorstatus;
+	uint8_t tmp;
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, ACCEL_CONFIG, &tmp, 1);
+	if(errorstatus != 0){
+		return 1;
+	}
+	else return tmp;
+
+}
+
+MPU6050_errorstatus MPU6050_Accel_Set_Range(MPU6050_Accel_Range range){
+
+	MPU6050_errorstatus errorstatus;
+
+	errorstatus = MPU6050_Write((MPU6050_ADDRESS & 0x7f) << 1, ACCEL_CONFIG, &range);
+	if(errorstatus != 0){
+		return errorstatus;
+	}
+	else return MPU6050_NO_ERROR;
+
+}
+
+MPU6050_errorstatus  MPU6050_Set_Clock(MPU6050_Clock_Select clock){
+
+	MPU6050_errorstatus errorstatus;
+
+	errorstatus = MPU6050_Write((MPU6050_ADDRESS & 0x7f) << 1, PWR_MGMT_1, &clock);
+	if(errorstatus != 0){
+		return errorstatus;
+	}
+	else return MPU6050_NO_ERROR;
+
+}
+
+uint16_t MPU6050_Get_Temperature(void){
+
+	MPU6050_errorstatus errorstatus;
+	uint8_t temp_low;
+	uint8_t temp_high;
+	uint16_t temp;
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, TEMP_OUT_L, &temp_low, 1);
+	if(errorstatus != 0){
+		return 1;
+	}
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, TEMP_OUT_H, &temp_high, 1);
+	if(errorstatus != 0){
+		return 1;
+	}
+
+	temp = temp_low + temp_high;
+
+	return temp;
+
+}
+
+uint16_t MPU6050_Get_Gyro_Data(void){
+
+	MPU6050_errorstatus errorstatus;
+	uint8_t gyro_xlow;
+	uint8_t gyro_xhigh;
+
+	uint8_t gyro_ylow;
+	uint8_t gyro_yhigh;
+
+	uint8_t gyro_zlow;
+	uint8_t gyro_zhigh;
+	uint16_t gyrox;
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_XOUT_L, &gyro_xlow, 1);
+	if(errorstatus != 0){
+		return 1;
+	}
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_XOUT_H, &gyro_xhigh, 1);
+	if(errorstatus != 0){
+		return 1;
+	}
+
+	/*errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_YOUT_L, &gyro_ylow, 1);
+	if(errorstatus != 0){
+		return 1;
+	}
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_YOUT_H, &gyro_yhigh, 1);
+	if(errorstatus != 0){
+		return 1;
+	}
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_ZOUT_L, &gyro_zlow, 1);
+	if(errorstatus != 0){
+		return 1;
+	}
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_ZOUT_H, &gyro_zhigh, 1);
+	if(errorstatus != 0){
+		return 1;
+	}*/
+
+	gyrox = gyro_xlow + gyro_xhigh;
+
+	return gyrox;
+}
+
+
 
 
 
