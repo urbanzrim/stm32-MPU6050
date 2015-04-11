@@ -164,7 +164,7 @@ MPU6050_errorstatus MPU6050_Set_Clock(MPU6050_Clock_Select clock);
 MPU6050_errorstatus MPU6050_Initialization(void);
 
 /* Data functions prototypes */
-uint16_t MPU6050_Get_Gyro_Data(void);
-MPU6050_errorstatus MPU6050_Get_Accel_Data(void);
+MPU6050_errorstatus MPU6050_Get_Gyro_Data(uint16_t* X, uint16_t* Y, uint16_t* Z);
+MPU6050_errorstatus MPU6050_Get_Accel_Data(uint16_t* X, uint16_t* Y, uint16_t* Z);
 uint16_t MPU6050_Get_Temperature(void);
 

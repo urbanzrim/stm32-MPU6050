@@ -11,23 +11,22 @@
 
 int main(void)
 {
-	int delay;
 	MPU6050_errorstatus err;
-	float data;
+	uint16_t xdata;
+	uint16_t ydata;
+	uint16_t zdata;
 	gpio_init();
 	tim_init();
 	uart_init();
 	i2c_init();
 
-	/* MPU6050 Initialization/Configuration
-	 * For changing configuration parameters, go to mpu6050.c
-	 */
-	//burek = MPU6050_Set_Clock();
-
 	err = MPU6050_Initialization();
     while(1)
     {
-    	data = MPU6050_Get_Gyro_Data();
+    	err = MPU6050_Get_Accel_Data(&xdata, &ydata, &zdata);
+    	printf("%i  ", xdata);
+    	printf("%i  ", ydata);
+    	printf("%i\n", zdata);
 
     }
 }

@@ -2,7 +2,7 @@
 <breakpoints>
 <breakpoint enabled="false" persistant="true" registered="true">
 <resource path="/mpu6050/cmsis_lib/source/mpu6050.c" type="1"/>
-<marker lineNumber="14" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
+<marker lineNumber="40" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
 <attrib name="enabled" value="false"/>
 <attrib name="org.eclipse.cdt.debug.core.condition" value=""/>
 <attrib name="org.eclipse.debug.core.id" value="org.eclipse.cdt.debug.core"/>
@@ -12,17 +12,17 @@
 <attrib name="persistant" value="true"/>
 <attrib name="org.eclipse.cdt.debug.core.breakpointType" value="0"/>
 <attrib name="workingset_id" value="org.eclipse.debug.ui.breakpointWorkingSet"/>
-<attrib name="message" value="Line breakpoint: mpu6050.c [line: 14]"/>
+<attrib name="message" value="Line breakpoint: mpu6050.c [line: 40]"/>
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/mpu6050/cmsis_lib/source/mpu6050.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\CooCox\CoIDE\workspace\mpu6050\cmsis_lib\source\mpu6050.c"/>
-<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 <attrib name="org.eclipse.debug.core.enabled" value="false"/>
+<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 </marker>
 </breakpoint>
 <breakpoint enabled="false" persistant="true" registered="true">
 <resource path="/mpu6050/cmsis_lib/source/mpu6050.c" type="1"/>
-<marker lineNumber="16" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
+<marker lineNumber="42" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
 <attrib name="enabled" value="false"/>
 <attrib name="org.eclipse.cdt.debug.core.condition" value=""/>
 <attrib name="org.eclipse.debug.core.id" value="org.eclipse.cdt.debug.core"/>
@@ -32,12 +32,12 @@
 <attrib name="persistant" value="true"/>
 <attrib name="org.eclipse.cdt.debug.core.breakpointType" value="0"/>
 <attrib name="workingset_id" value="org.eclipse.debug.ui.breakpointWorkingSet"/>
-<attrib name="message" value="Line breakpoint: mpu6050.c [line: 16]"/>
+<attrib name="message" value="Line breakpoint: mpu6050.c [line: 42]"/>
 <attrib name="registered" value="true"/>
 <attrib name="path" value="/mpu6050/cmsis_lib/source/mpu6050.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\CooCox\CoIDE\workspace\mpu6050\cmsis_lib\source\mpu6050.c"/>
-<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 <attrib name="org.eclipse.debug.core.enabled" value="false"/>
+<attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
 </marker>
 </breakpoint>
 </breakpoints>

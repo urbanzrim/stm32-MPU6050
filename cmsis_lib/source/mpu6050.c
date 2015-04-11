@@ -256,52 +256,90 @@ uint16_t MPU6050_Get_Temperature(void){
 
 }
 
-uint16_t MPU6050_Get_Gyro_Data(void){
+MPU6050_errorstatus MPU6050_Get_Gyro_Data(uint16_t* X, uint16_t* Y, uint16_t* Z){
 
 	MPU6050_errorstatus errorstatus;
-	uint8_t gyro_xlow;
-	uint8_t gyro_xhigh;
 
-	uint8_t gyro_ylow;
-	uint8_t gyro_yhigh;
+	uint8_t xlow, xhigh, ylow, yhigh, zlow, zhigh;
 
-	uint8_t gyro_zlow;
-	uint8_t gyro_zhigh;
-	uint16_t gyrox;
-
-	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_XOUT_L, &gyro_xlow, 1);
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_XOUT_L, &xlow, 1);
 	if(errorstatus != 0){
-		return 1;
+		return errorstatus;
 	}
 
-	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_XOUT_H, &gyro_xhigh, 1);
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_XOUT_H, &xhigh, 1);
 	if(errorstatus != 0){
-		return 1;
+		return errorstatus;
 	}
 
-	/*errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_YOUT_L, &gyro_ylow, 1);
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_YOUT_L, &ylow, 1);
 	if(errorstatus != 0){
-		return 1;
+		return errorstatus;
 	}
 
-	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_YOUT_H, &gyro_yhigh, 1);
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_YOUT_H, &yhigh, 1);
 	if(errorstatus != 0){
-		return 1;
+		return errorstatus;
 	}
 
-	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_ZOUT_L, &gyro_zlow, 1);
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_ZOUT_L, &zlow, 1);
 	if(errorstatus != 0){
-		return 1;
+		return errorstatus;
 	}
 
-	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_ZOUT_H, &gyro_zhigh, 1);
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, GYRO_ZOUT_H, &zhigh, 1);
 	if(errorstatus != 0){
-		return 1;
-	}*/
+		return errorstatus;
+	}
 
-	gyrox = gyro_xlow + gyro_xhigh;
+	*X = xlow + xhigh;
+	*Y = ylow + yhigh;
+	*Z = zlow + zhigh;
 
-	return gyrox;
+	return MPU6050_NO_ERROR;
+}
+
+MPU6050_errorstatus MPU6050_Get_Accel_Data(uint16_t* X, uint16_t* Y, uint16_t* Z){
+
+	MPU6050_errorstatus errorstatus;
+
+	uint8_t xlow, xhigh, ylow, yhigh, zlow, zhigh;
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, ACCEL_XOUT_L, &xlow, 1);
+	if(errorstatus != 0){
+		return errorstatus;
+	}
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, ACCEL_XOUT_H, &xhigh, 1);
+	if(errorstatus != 0){
+		return errorstatus;
+	}
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, ACCEL_YOUT_L, &ylow, 1);
+	if(errorstatus != 0){
+		return errorstatus;
+	}
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, ACCEL_YOUT_H, &yhigh, 1);
+	if(errorstatus != 0){
+		return errorstatus;
+	}
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, ACCEL_ZOUT_L, &zlow, 1);
+	if(errorstatus != 0){
+		return errorstatus;
+	}
+
+	errorstatus = MPU6050_Read((MPU6050_ADDRESS & 0x7f) << 1, ACCEL_ZOUT_H, &zhigh, 1);
+	if(errorstatus != 0){
+		return errorstatus;
+	}
+
+	*X = xlow + xhigh;
+	*Y = ylow + yhigh;
+	*Z = zlow + zhigh;
+
+	return MPU6050_NO_ERROR;
 }
 
 
