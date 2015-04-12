@@ -42,6 +42,9 @@
       <source file="..\..\..\cmsis_lib\include\stm32f30x_gpio.h" lastModified="14c933b398e">
          <include file="..\..\..\cmsis_boot\stm32f30x.h"/>
       </source>
+      <source file="..\..\..\cmsis_lib\source\mpu6050.c" lastModified="14caf67f80f">
+         <include file="..\..\..\cmsis_lib\include\mpu6050.h"/>
+      </source>
       <source file="..\..\..\cmsis_lib\source\stm32f30x_tim.c" lastModified="14c933b7146">
          <include file="..\..\..\cmsis_lib\include\stm32f30x_tim.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f30x_rcc.h"/>
@@ -52,7 +55,7 @@
       <source file="..\..\..\syscalls\syscalls.c" lastModified="14c9146f990">
          <include file="..\..\..\cmsis_lib\include\stm32f30x_usart.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\mpu6050.h" lastModified="14ca7c55e08">
+      <source file="..\..\..\cmsis_lib\include\mpu6050.h" lastModified="14caf67b3cd">
          <include file="..\..\..\cmsis_lib\include\stm32f30x_i2c.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f30x_tim.h" lastModified="14c933b7146">
@@ -64,6 +67,10 @@
       <source file="..\..\..\cmsis_lib\source\stm32f30x_spi.c" lastModified="14c933b6ab9">
          <include file="..\..\..\cmsis_lib\include\stm32f30x_spi.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f30x_rcc.h"/>
+      </source>
+      <source file="..\..\..\main.c" lastModified="14caf6847ae">
+         <include file="..\..\..\cmsis_lib\include\dboardsetup.h"/>
+         <include file="..\..\..\cmsis_lib\include\mpu6050.h"/>
       </source>
       <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="14c933b11b6">
       </source>

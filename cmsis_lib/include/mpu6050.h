@@ -1,8 +1,10 @@
-/*
- * mpu6050.c
+/**
+ * @file mpu6050.h
+ * @brief header file for mpu6050.c
  *
- *  Created on: 7. apr. 2015
- *      Author: Urban Zrim
+ * @author Urban Zrim
+ * @date 7.4.2015
+ *
  */
 
 #include "stm32f30x_i2c.h"
@@ -96,12 +98,31 @@
 #define FIFO_R_W 			0x74
 #define WHO_AM_I			0x75
 
+/* Gyroscope LSB sensitivity defines */
+#define MPU6050_GYRO_RANGE_250		((float)131)
+#define MPU6050_GYRO_RANGE_500		((float)65.5)
+#define MPU6050_GYRO_RANGE_1000		((float)32.8)
+#define MPU6050_GYRO_RANGE_2000		((float)16.4)
+
+/* Accelerometer LSB sensitivity defines */
+#define MPU6050_ACCEL_RANGE_2g		((float)16384)
+#define MPU6050_ACCEL_RANGE_4g		((float)8192)
+#define MPU6050_ACCEL_RANGE_8g		((float)4096)
+#define MPU6050_ACCEL_RANGE_16g		((float)2048)
 
 /* Maximum values for timeout flags waiting loops. These timeouts are not "time" defined
  * and are used just that application doesn't get stuck if I2C communication is corrupted.
  */
 #define MPU6050_FLAG_TIMEOUT             (uint32_t)0x1000
 #define MPU6050_LONG_TIMEOUT             (uint32_t)(10 * MPU6050_FLAG_TIMEOUT)
+
+
+typedef struct{
+
+	float gyroMul;		//Gyroscope raw data multiplier
+	float accelMul;		//Accelerometer raw data multiplier
+
+}MPU6050_dataStruct;
 
 typedef enum{
 	/* MPU6050 I2C success */
@@ -164,7 +185,9 @@ MPU6050_errorstatus MPU6050_Set_Clock(MPU6050_Clock_Select clock);
 MPU6050_errorstatus MPU6050_Initialization(void);
 
 /* Data functions prototypes */
-MPU6050_errorstatus MPU6050_Get_Gyro_Data(uint16_t* X, uint16_t* Y, uint16_t* Z);
-MPU6050_errorstatus MPU6050_Get_Accel_Data(uint16_t* X, uint16_t* Y, uint16_t* Z);
-uint16_t MPU6050_Get_Temperature(void);
+MPU6050_errorstatus MPU6050_Get_Gyro_Data_Raw(int16_t* X, int16_t* Y, int16_t* Z);
+MPU6050_errorstatus MPU6050_Get_Accel_Data_Raw(int16_t* X, int16_t* Y, int16_t* Z);
+MPU6050_errorstatus MPU6050_Get_Gyro_Data(float* X, float* Y, float* Z);
+MPU6050_errorstatus MPU6050_Get_Accel_Data(float* X, float* Y, float* Z);
+int16_t MPU6050_Get_Temperature(void);
 

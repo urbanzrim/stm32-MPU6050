@@ -13,21 +13,26 @@
 <part id="0"/>
 <part id="1"/>
 <part id="2"/>
+<part id="3"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
 <editor id="org.eclipse.cdt.ui.editor.CEditor" name="mpu6050.h" partName="mpu6050.h" path="C:/CooCox/CoIDE/workspace/mpu6050/cmsis_lib/include/mpu6050.h" title="mpu6050.h" tooltip="C:/CooCox/CoIDE/workspace/mpu6050/cmsis_lib/include/mpu6050.h" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/mpu6050/cmsis_lib/include/mpu6050.h"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="4696" selectionTopPixel="2429"/>
+<editorState selectionHorizontalPixel="0" selectionLength="16" selectionOffset="3509" selectionTopPixel="1887"/>
 </editor>
-<editor id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/CooCox/CoIDE/workspace/mpu6050/main.c" title="main.c" tooltip="C:/CooCox/CoIDE/workspace/mpu6050/main.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/CooCox/CoIDE/workspace/mpu6050/main.c" title="main.c" tooltip="C:/CooCox/CoIDE/workspace/mpu6050/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/mpu6050/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="525" selectionTopPixel="100"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="522" selectionTopPixel="168"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="mpu6050.c" partName="mpu6050.c" path="C:/CooCox/CoIDE/workspace/mpu6050/cmsis_lib/source/mpu6050.c" title="mpu6050.c" tooltip="C:/CooCox/CoIDE/workspace/mpu6050/cmsis_lib/source/mpu6050.c" workbook="DefaultEditorWorkbook">
+<editor id="org.eclipse.cdt.ui.editor.CEditor" name="mpu6050.c" partName="mpu6050.c" path="C:/CooCox/CoIDE/workspace/mpu6050/cmsis_lib/source/mpu6050.c" title="mpu6050.c" tooltip="C:/CooCox/CoIDE/workspace/mpu6050/cmsis_lib/source/mpu6050.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/mpu6050/cmsis_lib/source/mpu6050.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="6816" selectionTopPixel="4179"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="746" selectionTopPixel="141"/>
+</editor>
+<editor id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="startup_stm32f30x.S" partName="startup_stm32f30x.S" path="C:/CooCox/CoIDE/workspace/mpu6050/cmsis_boot/startup/startup_stm32f30x.S" title="startup_stm32f30x.S" tooltip="C:/CooCox/CoIDE/workspace/mpu6050/cmsis_boot/startup/startup_stm32f30x.S" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/mpu6050/cmsis_boot/startup/startup_stm32f30x.S"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
@@ -188,8 +193,8 @@
 <hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
 <hide_toolbar_item_id id="org.coocox.builder.ui.build"/>
 <hide_toolbar_item_id id="org.coocox.welcome.ui.action.welcome"/>
-<hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
 <hide_toolbar_item_id id="org.coocox.codebugger.configuration.coideProgramDownloadAction"/>
+<hide_toolbar_item_id id="org.coocox.component.ui.ShowRepositoryAction"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
 <view id="org.eclipse.debug.ui.DebugView"/>
 <view id="org.coocox.builder.ui.views.ProjectView"/>
@@ -197,7 +202,7 @@
 <fastViewBar fastViewLocation="1024" id="org.eclipse.ui.internal.ViewStack@aef088" orientation="256" selectedTabId="org.eclipse.debug.ui.VariableView" style="0">
 <fastViews>
 <view id="org.coocox.codebugger.trace.ui.traceview" ratio="0.29968455"/>
-<view id="org.eclipse.debug.ui.VariableView" ratio="0.28274968"/>
+<view id="org.eclipse.debug.ui.VariableView" ratio="0.3761349"/>
 </fastViews>
 </fastViewBar>
 </fastViewBars>
@@ -257,158 +262,157 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/mpu6050/main.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/mpu6050/cmsis_lib/include/mpu6050.h"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/mpu6050/cmsis_lib/source/mpu6050.c"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/mpu6050/cmsis_boot/startup/startup_stm32f30x.S"/>
 </editors>
-<item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<item historyLabel="startup_stm32f30x.S" index="1">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="251" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="266" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="280" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="295" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="454" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="513" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="485" y="0"/>
+<position info="not_deleted" x="572" y="0"/>
 </item>
 <item historyLabel="main.c" index="0">
-<position info="not_deleted" x="525" y="0"/>
+<position info="not_deleted" x="601" y="0"/>
 </item>
-<item historyLabel="mpu6050.h" index="1">
-<position info="not_deleted" x="4696" y="0"/>
+<item historyLabel="main.c" index="0">
+<position info="not_deleted" x="513" y="0"/>
 </item>
-<item active="true" historyLabel="mpu6050.c" index="2">
-<position info="not_deleted" x="6472" y="21"/>
+<item active="true" historyLabel="main.c" index="0">
+<position info="not_deleted" x="572" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>

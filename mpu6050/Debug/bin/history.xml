@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
    <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=mpu6050.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\mpu6050 -TC:\CooCox\CoIDE\configuration\ProgramData\mpu6050/arm-gcc-link.ld -g">
-      <target file="mpu6050.elf" lastModified="14ca7dfdb86">
-         <source file="..\obj\stm32f30x_rcc.o" lastModified="14ca7ce357e"/>
-         <source file="..\obj\stm32f30x_gpio.o" lastModified="14ca7ce35cc"/>
-         <source file="..\obj\main.o" lastModified="14ca7dfd922"/>
-         <source file="..\obj\stm32f30x_spi.o" lastModified="14ca7ce36ed"/>
-         <source file="..\obj\stm32f30x_i2c.o" lastModified="14ca7ce375a"/>
-         <source file="..\obj\mpu6050.o" lastModified="14ca7dfd971"/>
-         <source file="..\obj\system_stm32f30x_temp.o" lastModified="14ca7ce37f7"/>
-         <source file="..\obj\syscalls.o" lastModified="14ca7ce3864"/>
-         <source file="..\obj\stm32f30x_misc.o" lastModified="14ca7ce38b2"/>
-         <source file="..\obj\stm32f30x_tim.o" lastModified="14ca7ce397d"/>
-         <source file="..\obj\startup_stm32f30x.o" lastModified="14ca7ce399c"/>
-         <source file="..\obj\stm32f30x_usart.o" lastModified="14ca7ce3a19"/>
+      <target file="mpu6050.elf" lastModified="14caf6865f1">
+         <source file="..\obj\stm32f30x_rcc.o" lastModified="14ca9330f16"/>
+         <source file="..\obj\stm32f30x_gpio.o" lastModified="14ca9330f64"/>
+         <source file="..\obj\main.o" lastModified="14caf685373"/>
+         <source file="..\obj\stm32f30x_spi.o" lastModified="14ca933106e"/>
+         <source file="..\obj\stm32f30x_i2c.o" lastModified="14ca93310db"/>
+         <source file="..\obj\mpu6050.o" lastModified="14caf6853e0"/>
+         <source file="..\obj\system_stm32f30x_temp.o" lastModified="14ca9331158"/>
+         <source file="..\obj\syscalls.o" lastModified="14ca93311a6"/>
+         <source file="..\obj\stm32f30x_misc.o" lastModified="14ca93311e5"/>
+         <source file="..\obj\stm32f30x_tim.o" lastModified="14ca93312a0"/>
+         <source file="..\obj\startup_stm32f30x.o" lastModified="14ca93312bf"/>
+         <source file="..\obj\stm32f30x_usart.o" lastModified="14ca933131d"/>
       </target>
    </processor>
 </history>
