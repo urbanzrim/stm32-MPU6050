@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <breakpoints>
-<breakpoint enabled="false" persistant="true" registered="true">
+<breakpoint enabled="true" persistant="true" registered="true">
 <resource path="/mpu6050/main.c" type="1"/>
-<marker lineNumber="60" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
+<marker lineNumber="47" type="org.eclipse.cdt.debug.core.cLineBreakpointMarker">
 <attrib name="enabled" value="true"/>
 <attrib name="org.eclipse.cdt.debug.core.condition" value=""/>
 <attrib name="org.eclipse.debug.core.id" value="org.eclipse.cdt.debug.core"/>
@@ -17,7 +17,7 @@
 <attrib name="path" value="/mpu6050/main.c"/>
 <attrib name="org.eclipse.cdt.debug.core.sourceHandle" value="C:\CooCox\CoIDE\workspace\mpu6050\main.c"/>
 <attrib name="org.eclipse.cdt.debug.core.ignoreCount" value="0"/>
-<attrib name="org.eclipse.debug.core.enabled" value="false"/>
+<attrib name="org.eclipse.debug.core.enabled" value="true"/>
 </marker>
 </breakpoint>
 </breakpoints>

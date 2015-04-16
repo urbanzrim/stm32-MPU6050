@@ -36,6 +36,7 @@ void tim_init(void);
 void uart_init(void);
 void int_init(void);
 void i2c_init(void);
+void int_init(void);
 
 /* Initializes GPIO ports and pins for F3 breakout board */
 void gpio_init(){
@@ -106,7 +107,7 @@ void uart_init(){
 	RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1, ENABLE);
 
 	/* USART structure init*/
-	USART_InitStructure.USART_BaudRate = 9600;
+	USART_InitStructure.USART_BaudRate = 57600;
 	USART_InitStructure.USART_WordLength = USART_WordLength_8b;
 	USART_InitStructure.USART_StopBits = USART_StopBits_1;
 	USART_InitStructure.USART_Parity = USART_Parity_No;
@@ -124,8 +125,20 @@ void tim_init(){
 	TIM_TimeBaseInitTypeDef TimerInitStructure;
     TIM_OCInitTypeDef OutputChannelInit;
 
+    RCC_APB2PeriphClockCmd(RCC_APB2Periph_TIM1, ENABLE);
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE);
     RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM4, ENABLE);
+
+	/* Time base configuration */
+	// Prescaler and period are defined for 10ms
+    TimerInitStructure.TIM_Prescaler = 72-1;
+    TimerInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
+    TimerInitStructure.TIM_Period = 10000-1;
+    TimerInitStructure.TIM_ClockDivision = TIM_CKD_DIV1;
+    TimerInitStructure.TIM_RepetitionCounter = 0;
+	TIM_TimeBaseInit(TIM1, &TimerInitStructure);
+	/* TIM2 enable counter */
+	TIM_Cmd(TIM1, ENABLE);
 
     TimerInitStructure.TIM_Prescaler = 71;
     TimerInitStructure.TIM_CounterMode = TIM_CounterMode_Up;
@@ -169,9 +182,19 @@ void i2c_init(){
 	I2C_InitStructure.I2C_AnalogFilter = I2C_AnalogFilter_Enable;
 	I2C_InitStructure.I2C_DigitalFilter = 0x00;
 	I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
-	I2C_InitStructure.I2C_Timing = 0xF010C0FF;
+	I2C_InitStructure.I2C_Timing = 0x00A00D92;
 	I2C_Init(I2C1, &I2C_InitStructure);
 
 	I2C_Cmd(I2C1, ENABLE);
 
+}
+
+void int_init(){
+
+	 NVIC_InitTypeDef nvicStructure;
+	 nvicStructure.NVIC_IRQChannel = TIM2_IRQn;
+	 nvicStructure.NVIC_IRQChannelPreemptionPriority = 0;
+	 nvicStructure.NVIC_IRQChannelSubPriority = 1;
+	 nvicStructure.NVIC_IRQChannelCmd = ENABLE;
+	 NVIC_Init(&nvicStructure);
 }

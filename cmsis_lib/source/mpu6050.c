@@ -5,29 +5,7 @@
  * @author Urban Zrim
  * @date 7.4.2015
  *
- *  --------------------------------------------------------------------------------
- *  Copyright (c) 2015, Urban Zrim
- *
- *	Permission is hereby granted, free of charge, to any person obtaining a copy
- *	of this software and associated documentation files (the "Software"), to deal
- *	in the Software without restriction, including without limitation the rights
- *	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *	copies of the Software, and to permit persons to whom the Software is
- *	furnished to do so, subject to the following conditions:
- *
- *	The above copyright notice and this permission notice shall be included in
- *	all copies or substantial portions of the Software.
- *
- *	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- *	THE SOFTWARE.
- *  --------------------------------------------------------------------------------
  */
-
 
 #include "mpu6050.h"
 
@@ -52,7 +30,7 @@ MPU6050_errorstatus MPU6050_Initialization(void){
 	/* Set Gyroscope's full scope range
 	 * possible values @gyro_scale_range
 	 */
-	errorstatus = MPU6050_Gyro_Set_Range(MPU6050_GYRO_250);
+	errorstatus = MPU6050_Gyro_Set_Range(MPU6050_GYRO_500);
 	if(errorstatus != 0) return errorstatus;
 
 	/* Set Accelerometer's full scope range
@@ -189,7 +167,7 @@ int16_t MPU6050_Get_Temperature(void){
 		return 1;
 	}
 
-	temp = (uint16_t)(temp_high << 8 | temp_low);
+	temp = (int16_t)(temp_high << 8 | temp_low);
 
 	temp_celsius = temp/340 + 36;
 	return temp_celsius;
@@ -316,19 +294,19 @@ MPU6050_errorstatus MPU6050_Get_Gyro_Data(float* X, float* Y, float* Z){
 	errorstatus = MPU6050_Get_Gyro_Data_Raw(&gyro_x, &gyro_y, &gyro_z);
 
 	if(dataStruct.gyroMul == MPU6050_GYRO_250){
-		mult = (float)(1/MPU6050_GYRO_RANGE_250);
+		mult = (float)MPU6050_GYRO_RANGE_250;
 	}
 	else if(dataStruct.gyroMul == MPU6050_GYRO_500){
-		mult = (float)(1/MPU6050_GYRO_RANGE_500);
+		mult = (float)MPU6050_GYRO_RANGE_500;
 	}
 	else if(dataStruct.gyroMul == MPU6050_GYRO_1000){
-		mult = (float)(1/MPU6050_GYRO_RANGE_1000);
+		mult = (float)MPU6050_GYRO_RANGE_1000;
 	}
-	else mult = (float)(1/MPU6050_GYRO_RANGE_2000);
+	else mult = (float)MPU6050_GYRO_RANGE_2000;
 
-	*X = (float)(gyro_x*mult);
-	*Y = (float)(gyro_y*mult);
-	*Z = (float)(gyro_z*mult);
+	*X = (float)(gyro_x/mult);
+	*Y = (float)(gyro_y/mult);
+	*Z = (float)(gyro_z/mult);
 
 	return MPU6050_NO_ERROR;
 }
@@ -351,19 +329,19 @@ MPU6050_errorstatus MPU6050_Get_Accel_Data(float* X, float* Y, float* Z){
 	errorstatus = MPU6050_Get_Accel_Data_Raw(&accel_x, &accel_y, &accel_z);
 
 	if(dataStruct.accelMul == MPU6050_ACCEL_2g){
-		mult = (float)(1/MPU6050_ACCEL_RANGE_2g);
+		mult = (float)MPU6050_ACCEL_RANGE_2g;
 	}
 	else if(dataStruct.accelMul == MPU6050_ACCEL_2g){
-		mult = (float)(1/MPU6050_ACCEL_RANGE_4g);
+		mult = (float)MPU6050_ACCEL_RANGE_4g;
 	}
 	else if(dataStruct.accelMul == MPU6050_ACCEL_2g){
-		mult = (float)(1/MPU6050_ACCEL_RANGE_8g);
+		mult = (float)MPU6050_ACCEL_RANGE_8g;
 	}
-	else mult = (float)(1/MPU6050_ACCEL_RANGE_16g);
+	else mult = (float)MPU6050_ACCEL_RANGE_16g;
 
-	*X = (float)(accel_x*mult);
-	*Y = (float)(accel_y*mult);
-	*Z = (float)(accel_z*mult);
+	*X = (float)(accel_x/mult);
+	*Y = (float)(accel_y/mult);
+	*Z = (float)(accel_z/mult);
 
 	return MPU6050_NO_ERROR;
 }

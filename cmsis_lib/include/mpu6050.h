@@ -5,27 +5,6 @@
  * @author Urban Zrim
  * @date 7.4.2015
  *
- *  --------------------------------------------------------------------------------
- *  Copyright (c) 2015, Urban Zrim
- *
- *	Permission is hereby granted, free of charge, to any person obtaining a copy
- *	of this software and associated documentation files (the "Software"), to deal
- *	in the Software without restriction, including without limitation the rights
- *	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- *	copies of the Software, and to permit persons to whom the Software is
- *	furnished to do so, subject to the following conditions:
- *
- *	The above copyright notice and this permission notice shall be included in
- *	all copies or substantial portions of the Software.
- *
- *	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- *	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- *	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- *	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- *	THE SOFTWARE.
- *  --------------------------------------------------------------------------------
  */
 
 #include "stm32f30x_i2c.h"
@@ -135,8 +114,10 @@
  * and are used just that application doesn't get stuck if I2C communication is corrupted.
  */
 #define MPU6050_FLAG_TIMEOUT             (uint32_t)0x1000
-#define MPU6050_LONG_TIMEOUT             (uint32_t)(10 * MPU6050_FLAG_TIMEOUT)
+#define MPU6050_LONG_TIMEOUT             (uint32_t)(5 * MPU6050_FLAG_TIMEOUT)
 
+#define PI_NUM		(float)3.14159265
+#define RAD			(float)57.29578
 
 typedef struct{
 

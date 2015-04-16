@@ -1,9 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <dependencies>
-   <includePath signature="/I..\..\..\workspace\mpu6050\cmsis_boot /I..\..\..\workspace /I..\..\..\workspace\mpu6050\cmsis_lib\include /I..\..\..\workspace\mpu6050\cmsis_lib /I..\..\..\workspace\mpu6050\cmsis /I..\..\..\workspace\mpu6050">
+   <includePath signature="/I..\..\..\workspace\mpu6050data\cmsis_boot /I..\..\..\workspace\mpu6050data /I..\..\..\workspace /I..\..\..\workspace\mpu6050data\cmsis_lib /I..\..\..\workspace\mpu6050data\cmsis_lib\include /I..\..\..\workspace\mpu6050data\cmsis">
       <source file="..\..\..\cmsis_lib\source\stm32f30x_i2c.c" lastModified="14c933b4c68">
          <include file="..\..\..\cmsis_lib\include\stm32f30x_i2c.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f30x_rcc.h"/>
+      </source>
+      <source file="..\..\..\cmsis_lib\source\complementary_filter.c" lastModified="14cb28821ee">
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f30x_rcc.h" lastModified="14c933b32f2">
          <include file="..\..\..\cmsis_boot\stm32f30x.h"/>
@@ -29,7 +31,7 @@
          <include file="..\..\..\cmsis\core_cm4.h"/>
          <include file="..\..\..\cmsis_boot\system_stm32f30x.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\dboardsetup.h" lastModified="14c9a255c54">
+      <source file="..\..\..\cmsis_lib\include\dboardsetup.h" lastModified="14cc36b3a58">
          <include file="..\..\..\cmsis_boot\stm32f30x.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f30x_usart.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f30x_gpio.h"/>
@@ -42,7 +44,7 @@
       <source file="..\..\..\cmsis_lib\include\stm32f30x_gpio.h" lastModified="14c933b398e">
          <include file="..\..\..\cmsis_boot\stm32f30x.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\source\mpu6050.c" lastModified="14caf69dd97">
+      <source file="..\..\..\cmsis_lib\source\mpu6050.c" lastModified="14cc369e25c">
          <include file="..\..\..\cmsis_lib\include\mpu6050.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\source\stm32f30x_tim.c" lastModified="14c933b7146">
@@ -52,10 +54,10 @@
       <source file="..\..\..\cmsis_lib\source\stm32f30x_misc.c" lastModified="14c933b80f0">
          <include file="..\..\..\cmsis_lib\include\stm32f30x_misc.h"/>
       </source>
-      <source file="..\..\..\syscalls\syscalls.c" lastModified="14c9146f990">
+      <source file="..\..\..\syscalls\syscalls.c" lastModified="14cb2e455f0">
          <include file="..\..\..\cmsis_lib\include\stm32f30x_usart.h"/>
       </source>
-      <source file="..\..\..\cmsis_lib\include\mpu6050.h" lastModified="14caf69b1e6">
+      <source file="..\..\..\cmsis_lib\include\mpu6050.h" lastModified="14cc35e8b69">
          <include file="..\..\..\cmsis_lib\include\stm32f30x_i2c.h"/>
       </source>
       <source file="..\..\..\cmsis_lib\include\stm32f30x_tim.h" lastModified="14c933b7146">
@@ -67,10 +69,6 @@
       <source file="..\..\..\cmsis_lib\source\stm32f30x_spi.c" lastModified="14c933b6ab9">
          <include file="..\..\..\cmsis_lib\include\stm32f30x_spi.h"/>
          <include file="..\..\..\cmsis_lib\include\stm32f30x_rcc.h"/>
-      </source>
-      <source file="..\..\..\main.c" lastModified="14caf8801af">
-         <include file="..\..\..\cmsis_lib\include\dboardsetup.h"/>
-         <include file="..\..\..\cmsis_lib\include\mpu6050.h"/>
       </source>
       <source file="..\..\..\cmsis\core_cmFunc.h" lastModified="14c933b11b6">
       </source>
@@ -88,10 +86,10 @@
       </source>
       <source file="..\..\..\cmsis\core_cm4_simd.h" lastModified="14c933b11b6">
       </source>
-      <source file="..\..\..\cmsis_boot\system_stm32f30x.h" lastModified="14c933b24ef">
-      </source>
       <source file="..\..\..\cmsis_lib\include\stm32f30x_usart.h" lastModified="14c933b7710">
          <include file="..\..\..\cmsis_boot\stm32f30x.h"/>
+      </source>
+      <source file="..\..\..\cmsis_boot\system_stm32f30x.h" lastModified="14c933b24ef">
       </source>
    </includePath>
 </dependencies>
