@@ -25,14 +25,14 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/mpu6050data/cmsis_lib/include/mpu6050.h"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1416" selectionTopPixel="30"/>
 </editor>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="mpu6050.c" partName="mpu6050.c" path="C:/CooCox/CoIDE/workspace/mpu6050data/cmsis_lib/source/mpu6050.c" title="mpu6050.c" tooltip="C:/CooCox/CoIDE/workspace/mpu6050data/cmsis_lib/source/mpu6050.c" workbook="DefaultEditorWorkbook">
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="mpu6050.c" partName="mpu6050.c" path="C:/Users/Urban Zrim/Documents/GitHub/stm32-MPU6050/cmsis_lib/source/mpu6050.c" title="mpu6050.c" tooltip="C:/Users/Urban Zrim/Documents/GitHub/stm32-MPU6050/cmsis_lib/source/mpu6050.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/mpu6050data/cmsis_lib/source/mpu6050.c"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="992" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
 <view id="org.coocox.builder.ui.views.ProjectView" partName="Project">
-<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="1">
+<viewState CommonNavigator.LINKING_ENABLED="0" horizontalPosition="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0" verticalPosition="0">
 <expanded>
 <element path="/mpu6050data"/>
 <element path="/mpu6050data/cmsis_boot"/>
@@ -42,7 +42,7 @@
 <element path="/mpu6050data/syscalls"/>
 </expanded>
 <selection>
-<element path="/mpu6050data/cmsis_lib/source/complementary_filter.c"/>
+<element path="/mpu6050data"/>
 </selection>
 </viewState>
 </view>
@@ -56,7 +56,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.cdt.ui.editor.CEditor" activePerspective="org.coocox.builder.perspective.CoBuilder">
+<perspectives activePart="org.coocox.builder.ui.views.ProjectView" activePerspective="org.coocox.builder.perspective.CoBuilder">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="org.coocox.builder.ui.PerspectiveCoBuilder" id="org.coocox.builder.perspective.CoBuilder" label="CooCox CoBuilder"/>
 <alwaysOnActionSet id="org.coocox.component.ui.actionSet"/>
