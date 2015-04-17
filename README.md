@@ -1,4 +1,4 @@
-# stm32-MPU6050
+# MPU6050
 MPU6050 accelerometer and gyroscope drivers for STM32f3
 
 ## Usage
