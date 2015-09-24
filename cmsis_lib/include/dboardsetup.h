@@ -182,7 +182,7 @@ void i2c_init(){
 	I2C_InitStructure.I2C_AnalogFilter = I2C_AnalogFilter_Enable;
 	I2C_InitStructure.I2C_DigitalFilter = 0x00;
 	I2C_InitStructure.I2C_Mode = I2C_Mode_I2C;
-	I2C_InitStructure.I2C_Timing = 0x00A00D92;
+	I2C_InitStructure.I2C_Timing = 0x00310309;
 	I2C_Init(I2C1, &I2C_InitStructure);
 
 	I2C_Cmd(I2C1, ENABLE);
