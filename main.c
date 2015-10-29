@@ -54,30 +54,31 @@ int i = 0;
 
 int main(void)
 {
-	gpio_init();
-	int_init();
-	tim_init();
-	uart_init();
-	i2c_init();
+    gpio_init();
+    int_init();
+    tim_init();
+    uart_init();
+    i2c_init();
 
-	err = MPU6050_Initialization();
+    err = MPU6050_Initialization();
+    
     while(1)
     {
     	if (TIM_GetFlagStatus(TIM1, TIM_FLAG_Update) != RESET)
-    		    {
-    				TIM_ClearFlag(TIM1, TIM_IT_Update);
-    				err = MPU6050_Get_Gyro_Data(&gyro_xdata, &gyro_ydata, &gyro_zdata);
-    				err = MPU6050_Get_Accel_Data(&accel_xdata, &accel_ydata, &accel_zdata);
-    		    }
+    	{
+    		TIM_ClearFlag(TIM1, TIM_IT_Update);
+    		err = MPU6050_Get_Gyro_Data(&gyro_xdata, &gyro_ydata, &gyro_zdata);
+    		err = MPU6050_Get_Accel_Data(&accel_xdata, &accel_ydata, &accel_zdata);
+    	}
 
     	pitch += gyro_xdata/100;
     	roll += gyro_ydata/100;
-		pitchAcc = (float)(atan2((accel_xdata), (accel_zdata)))*(float)(180/PI_NUM);
-		rollAcc = (float)(atan2((accel_ydata), (accel_zdata)))*(float)(180/PI_NUM);
-		pitch = pitch*0.97 + pitchAcc*0.03;
-		roll = roll*0.97 + rollAcc*0.03;
+	pitchAcc = (float)(atan2((accel_xdata), (accel_zdata)))*(float)(180/PI_NUM);
+	rollAcc = (float)(atan2((accel_ydata), (accel_zdata)))*(float)(180/PI_NUM);
+	pitch = pitch*0.97 + pitchAcc*0.03;
+	roll = roll*0.97 + rollAcc*0.03;
 
-		sprintf(str, "%f\n", roll);
-		printf("%s", str);
+	sprintf(str, "%f\n", roll);
+	printf("%s", str);
     }
 }
